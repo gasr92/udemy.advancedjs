@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var product = {
+        name: "IPhone"
+    };
+
+    console.log(Object.isExtensible(product));
+    console.log(Object.isSealed(product));
+
+    Object.seal(product);
+
+    console.log(Object.isExtensible(product));
+    console.log(Object.isSealed(product));
+
+    product.price = 10;
+
+    console.log("price" in product);
+    delete product.name;
+
+    console.log("name" in product);
+
+    var x = Object.getOwnPropertyDescriptor(product, "name");
+
+    console.log(x.configurable);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var product = {
+        name: "IPhone"
+    };
+
+    console.log(Object.isExtensible(product));
+
+    Object.preventExtensions(product);
+
+    console.log(Object.isExtensible(product));
+
+    product.price = 700;
+
+    console.log(Object.isExtensible("price" in product));
+
+</script>
+
+</body>
+</html>

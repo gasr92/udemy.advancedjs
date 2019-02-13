@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var creditCard = {
+		name: "Gabriel"
+	};
+
+	console.log(creditCard.propertyIsEnumerable("name"));
+
+	Object.defineProperty(creditCard, "name", {
+		enumerable: false,
+	});
+
+	//console.log("name" in creditCard);
+	console.log(creditCard.propertyIsEnumerable("name"));
+
+
+
+
+
+	Object.defineProperty(creditCard, "name", {
+		configurable: false, // não permite que a propriedade seja deletada, por exemplo
+	});
+
+	delete creditCard.name;
+	console.log("name" in creditCard);
+	console.log(creditCard.name);
+
+	// não pode redefinir
+	Object.defineProperty(creditCard, "name", {
+		configurable: true
+	});
+
+</script>
+
+</body>
+</html>

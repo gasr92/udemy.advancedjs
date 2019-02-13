@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	/*
+	var c = new Object();
+	c.nome = 'Gabriel';
+	c.idade = 26;
+	c.asString = function(){
+		return '[Método 1] ' + this.nome + ' - ' + this.idade;
+	};
+
+	console.log(c.asString());
+	*/
+
+	// --------------------
+	// Uso do call
+	// --------------------
+
+	var c = new Object();
+	c.nome = 'Gabriel';
+	c.idade = 26;
+
+	var asString = function(){
+		var res = '[Metodo 2] ' + this.nome + ' - ' + this.idade + '   |   ';
+
+		if(arguments.length > 0){
+			for(var arg in arguments){
+				res += arg + ':' + arguments[arg] + '  ';
+			}
+		}
+		else{
+			res += 'Nenhum parâmetro informado';
+		}
+
+		return res;
+	}
+
+	this.nome = 'abcd';
+	this.idade = 20;
+
+	console.clear();
+
+	var r = asString.call(c, 'valor 1', 'valor 2', 'valor 3', 'valor 4');
+	console.log(r);
+
+	var x = asString.call();
+	console.log(x);
+	
+	
+
+	// --------------------
+	// Somar propriedades de um array
+	// --------------------	
+	var sum = function(itens, prop){
+		return itens.reduce(function(a,b){
+			return a + b[prop];
+		}, 0);
+	}
+
+	var venda = {
+		Itens: []
+	}
+
+	venda.Itens.push( {Id:1, Valor: 10} );
+	venda.Itens.push( {Id:2, Valor: 2.90} );
+	venda.Itens.push( {Id:3, Valor: 4} );
+	venda.Itens.push( {Id:4, Valor: 16} );
+	venda.Itens.push( {Id:5, Valor: 7.1} );
+	venda.ValorTotal = 500;
+
+	function printItens(){
+		var qtdItens = this.Itens.length;
+		var valorTotal = sum(this.Itens, 'Valor')
+
+		return 'Qtd: ' + qtdItens + '  Vlr: R$ ' + valorTotal;
+	}
+
+	var logVenda = printItens.call(venda);
+	console.log(logVenda);
+
+
+</script>
+
+
+</body>
+</html>

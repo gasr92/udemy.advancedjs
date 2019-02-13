@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var creditCard = {};
+
+    // os valores booleanos, por padrão, são falsos
+    Object.defineProperty(creditCard, "name", {
+        value: "Gabriel"
+    });
+
+    console.log("name" in creditCard);
+    console.log(creditCard.propertyIsEnumerable("name"));
+
+    // não vai funcionar, pois a propriedade Configurable está false
+    delete creditCard.name;
+
+    console.log("name" in creditCard);
+
+</script>
+
+</body>
+</html>

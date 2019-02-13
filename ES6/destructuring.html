@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    let student = {
+        firstName: 'Gabriel',
+        lastName: 'Silveira',
+        score: 80
+    };
+
+    //Este código
+    // const fName = student.firstName;
+    // const lName = student.lastName;
+    // const score = student.score;
+
+    //É igual a este em ES6
+    const {firstName:fName, lastName:lName, score:score} = student;
+
+    console.log(fName);
+    console.log(lName);
+    console.log(score);
+
+</script>
+
+</body>
+</html>

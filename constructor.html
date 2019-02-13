@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    function Flight(airlines, flightNumber){
+        this.airlines = airlines;
+        this.flightNumber = flightNumber;
+
+        this.display = function(){
+            console.log(this.airlines);
+            console.log(this.flightNumber);
+        };
+    }
+
+    // var f1 = new Flight;  // se não tiver nenhum parâmetro, não precisa do parentesis
+    var f1 = new Flight('American airlines', 'AA1234');
+    var f2 = new Flight('South west', 'BX40');
+
+    f1.display();
+    f2.display();
+
+    console.log(f1 instanceof Flight);
+    console.log(f2 instanceof Flight);
+
+    console.log(f1.constructor === Flight);
+    console.log(f2.constructor === Flight);
+
+</script>
+
+</body>
+</html>

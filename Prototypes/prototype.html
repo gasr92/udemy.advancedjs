@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var passenger ={
+        name: "Gabriel"
+    };
+
+    console.log("name" in passenger);
+    console.log(passenger.hasOwnProperty("name"));
+    console.log("hasOwnProperty" in passenger);
+    console.log(passenger.hasOwnProperty("hasOwnProperty"));
+
+    console.log(Object.prototype.hasOwnProperty("hasOwnProperty"));
+
+</script>
+
+</body>
+</html>

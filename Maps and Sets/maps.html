@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    let scores = new Map();
+
+    // outras menaira de inicializar seria assim, desta forma já define os itens
+    //let scores = new Map([['Maths', 90], ['Physics', 70], ['Chemistry', 80]]);
+
+    scores.set('Maths', 90);
+    scores.set('Physics', 70);
+    scores.set('Chemistry', 80);
+
+    console.log('Maths');
+    console.log('Physics');
+    console.log('Chemistry');
+
+    console.log(scores.size);
+    console.log(scores.has('Maths'));
+    console.log(scores.has('xxxx'));
+
+    scores.delete('Maths');
+
+    console.log(scores.has('Maths'));
+
+    scores.clear();
+
+    console.log(scores.size);
+
+</script>
+
+</body>
+</html>

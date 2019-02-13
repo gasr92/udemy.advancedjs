@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var creditCard = {
+        _name: "Gabriel"
+    };
+
+    Object.defineProperty(creditCard, "name", {
+        get: function(){
+            return this._name;
+        },
+        set: function(value){
+            this._name = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+
+</script>
+
+</body>
+</html>

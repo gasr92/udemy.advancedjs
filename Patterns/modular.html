@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var account = (function(){
+
+    var balance = 1000;
+
+    function getBalance(){
+            return balance;
+        };
+
+    function addIntrest(intrest){
+        balance += intrest;
+    };
+
+    return {
+        name: "Gabriel",
+        getBalance: getBalance,
+        addIntrest: addIntrest
+    };
+
+}());
+
+// neste caso só é possível alterar o valor de balance através do metodo addIntrest
+
+console.log(account.name);
+console.log(account.getBalance());
+account.addIntrest(40);
+console.log(account.getBalance());
+
+</script>
+
+</body>
+</html>

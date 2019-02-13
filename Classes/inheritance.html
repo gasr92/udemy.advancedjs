@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    class BMW{
+        constructor(make, model, year){
+            
+            this.make = make;
+            this.model =  model;
+            this.year =  year;
+        }
+
+        start(){
+            console.log('Start engine');
+        }
+
+        stop(){
+            console.log('Stop engine');
+        }
+    }
+
+    class ThreeSeries extends BMW{
+        constructor(make, model, year, cruiseControlEnabled){
+            super(make, model, year);
+
+            this.cruiseControlEnabled = cruiseControlEnabled;
+        }
+    }
+
+    class FiveSeries extends BMW{
+        constructor(make, model, year, parkingAssistentEnabled){
+            super(make, model, year);
+
+            this.parkingAssistentEnabled = parkingAssistentEnabled;
+        }
+
+        stop(){
+            console.log('Stop engine overriding');
+        }
+    }
+
+    let threeSeries = new ThreeSeries("BMW", "328", 2018, true);
+    let fiveSeries = new FiveSeries("BMW", "535", 2018, true);
+
+    console.log(threeSeries.make);
+    console.log(fiveSeries.make);
+    console.log(fiveSeries instanceof BMW);
+
+    threeSeries.start();
+    threeSeries.stop();
+    fiveSeries.stop();
+
+</script>
+
+</body>
+</html>

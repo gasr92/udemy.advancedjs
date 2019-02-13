@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teste</title>
+    </head>
+    <body>
+        <script>
+
+            var project = {
+                name: "Road work"
+            };
+
+            console.log(project.hasOwnProperty("name"));
+            var prot = Object.getPrototypeOf(project);
+            console.log(prot === Object.prototype);
+
+        </script>
+    </body>
+</html>
